@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure login portal for Nexus services">
+    <title>Nexus | Secure Login Portal</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="styles.css" as="style">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+</head>
+<body>
+    <div class="background-animation" aria-hidden="true"></div>
+    
+    <main class="login-wrapper">
+        <div class="login-container">
+            <div class="glass-card">
+                <header class="login-header">
+                    <div class="logo" aria-label="Nexus Security">
+                        <div class="logo-icon" aria-hidden="true">
+                            <i class="fas fa-shield-alt" role="img" aria-label="Security Shield"></i>
+                        </div>
+                        <h1>Nexus</h1>
+                    </div>
+                    <h2 class="welcome-heading">Welcome Back</h2>
+                    <p class="subtitle">Secure access to your account</p>
+                </header>
+
+                <form id="loginForm" class="floating-form" novalidate>
+                    <div class="input-group floating-input">
+                        <input type="email" id="email" name="email" placeholder=" " required 
+                               aria-label="Email address" autocomplete="username">
+                        <label for="email">Email Address</label>
+                        <i class="fas fa-envelope input-icon" aria-hidden="true"></i>
+                    </div>
+                    
+                    <div class="input-group floating-input">
+                        <input type="password" id="password" name="password" placeholder=" " required
+                               aria-label="Password" autocomplete="current-password">
+                        <label for="password">Password</label>
+                        <i class="" aria-hidden="true"></i>
+                        <button type="button" class="toggle-password" aria-label="Show password">
+                            <i class="fas fa-eye-slash"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="flex-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="remember" name="remember">
+                            <span class="checkmark" aria-hidden="true"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password" aria-label="Forgot password?">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn-login" aria-live="polite">
+                        <span class="btn-text">Continue</span>
+                        <span class="btn-loader" aria-hidden="true">
+                            <span class="loader-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                    
+                    <div class="social-divider" aria-hidden="true">
+                        <span>or continue with</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="social-btn google" aria-label="Sign in with Google">
+                            <i class="fab fa-google"></i>
+                        </button>
+                        <button type="button" class="social-btn apple" aria-label="Sign in with Apple">
+                            <i class="fab fa-apple"></i>
+                        </button>
+                        <button type="button" class="social-btn github" aria-label="Sign in with GitHub">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+                </form>
+                
+                <p class="register-link">Don't have an account? <a href="#" aria-label="Sign up for Nexus">Sign up</a></p>
+            </div>
+        </div>
+
+        <div id="error-message" class="error-message" role="alert" aria-atomic="true"></div>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
